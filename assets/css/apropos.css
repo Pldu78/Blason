@@ -1,0 +1,63 @@
+/* le block conteneur */
+
+.marquee-rtl {
+    max-width: 100vh;
+    /* largeur de la fen�tre */
+    margin: 1em auto 2em;
+    text-align: center;
+    /* masque tout ce qui d�passe */
+}
+
+
+/* le bloc d�filant */
+
+.marquee-rtl> :first-child {
+    display: block;
+    /* mod�le de bo�te en ligne */
+    padding-bottom: 2em;
+    padding: 1%;
+    /* un peu d'espace pour la transition */
+    padding-top: 100%;
+    /* placement � droite du conteneur */
+    animation: defilement-rtl 25s infinite linear;
+    animation-name: defilement-rtl;
+    /* r�f�rence � la r�gle @keyframes mise en oeuvre */
+    animation-delay: 0.2s;
+    /* valeur � ajuster suivant la longueur du message */
+    animation-iteration-count: infinite;
+    /* boucle continue */
+    animation-timing-function: linear;
+    /* pas vraiment utile ici */
+}
+
+@keyframes defilement-rtl {
+    0% {
+        transform: translate3d(0, 0, 0);
+        /* position initiale � droite */
+    }
+    100% {
+        transform: translate3d(0, -100%, 0);
+        /* position finale � gauche */
+    }
+}
+
+h1 {
+    margin-top: 5%;
+}
+
+body {
+    overflow: hidden;
+}
+
+#retour {
+    position: absolute;
+    width: 10vw;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.home {
+    color: white;
+    font-weight: 600;
+    margin: 1%;
+}
